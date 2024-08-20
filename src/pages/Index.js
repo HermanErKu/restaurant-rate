@@ -7,7 +7,7 @@ const Index = () => {
     <div>
       <h1>Index</h1>
 
-      <button class="add-button"></button>
+      <button className="add-button"></button>
     </div>
   );
 }
