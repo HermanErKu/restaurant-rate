@@ -5,7 +5,7 @@ const Index = () => {
 
   return (
     <div>
-      <h1>Index</h1>
+      <h1>Home</h1>
 
       <button className="add-button"></button>
     </div>
