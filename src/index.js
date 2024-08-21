@@ -24,13 +24,15 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Index from './pages/Index';
+import MapTest from './pages/MapTest';
 
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route index element={<Index redirect={true} />} />
+        <Route index element={<Index />} />
 
+        <Route path="map" element={<MapTest />} />
       </Routes>
     </BrowserRouter>
   );
