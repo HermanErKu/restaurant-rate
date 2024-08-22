@@ -7,7 +7,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 import { database } from '../utils/firebase';
-import { ref, onValue } from 'firebase/database';
+import { ref, onValue, set } from 'firebase/database';
 
 
 const Index = () => {
@@ -16,19 +16,25 @@ const Index = () => {
 
 
   const [data, setData] = useState(null);
+  const [ratings, setRatings] = useState(null);
+  const [restaurants, setRestaurants] = useState(null);
+
   useEffect(() => {
     const fetchData = async () => {
       const dbRef = ref(database, '/');
       await onValue(dbRef, (snapshot) => {
         const data = snapshot.val();
         setData(data);
+        setRatings(data["ratings"]);
+        setRestaurants(data["restaurants"]);
       });
     };
 
     fetchData();
   }, []);
 
-  console.log(data);
+  if (data) { console.log(data["restaurants"][0]) }
+  if (restaurants) { console.log(restaurants[0]) }
 
   return (
     <div className="swiper-container">
@@ -49,8 +55,15 @@ const Index = () => {
       <Swiper spaceBetween={50} slidesPerView={1} onSlideChange={(swiper) => setActiveSlide(swiper.activeIndex)}>
         <SwiperSlide>
           <div className="page1Content">
-
-
+            {data ? ratings.map((rating) => {
+              return (
+                <div key={rating["ratingID"]} className="ratingCard">
+                  <h1>{restaurants[rating["restaurantID"]]["restaurantName"]}</h1>
+                  <p>{rating["orderName"]} - {rating["orderPrice"]}kr</p>
+                  <p>{rating["comment"]}</p>
+                </div>
+              )
+            }) : null}
 
             <button className="add-button"></button>
           </div>
@@ -59,6 +72,15 @@ const Index = () => {
 
         <SwiperSlide>
           <div className="page2Content">
+            {data ? restaurants.map((restaurant) => {
+              return (
+                <div key={restaurant["restaurantID"]} className="restaurantCard">
+                  <h1>{restaurant["restaurantName"]}</h1>
+                  <p>{restaurant["restaurantComment"]}</p>
+                  <p>{restaurant["restaurantAddress"]}</p>
+                </div>
+              )
+            }) : null}
 
 
 
