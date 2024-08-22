@@ -82,6 +82,9 @@ body {
   gap: 35px;
 }
 
+.pageOverlayContainer > b {
+  font-size: 17px;
+}
 
 .bottomNavbar {
   position: fixed;
