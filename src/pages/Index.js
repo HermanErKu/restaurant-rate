@@ -9,18 +9,34 @@ import 'swiper/css/pagination';
 
 const Index = () => {
 
-  return (
+  /*return (
     <div>
       <h1>Home</h1>
       <Swiper spaceBetween={50} slidesPerView={1}>
         <SwiperSlide>Page 1 Content</SwiperSlide>
         <SwiperSlide>Page 2 Content</SwiperSlide>
-        {/* Add more SwiperSlide components for more pages */}
       </Swiper>
 
       <button className="add-button"></button>
     </div>
-  );
+  );*/
+
+  return (
+    <div className="swiper-container">
+      <Swiper spaceBetween={50} slidesPerView={1}>
+        <SwiperSlide>
+          Page 1 Content
+        </SwiperSlide>
+
+
+        <SwiperSlide>
+          Page 2 Content
+          <button className="add-button"></button>
+
+        </SwiperSlide>
+      </Swiper>
+    </div>
+  )
 }
 
 export default Index;

@@ -47,3 +47,16 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+
+
+/* CSS */
+.swiper-container {
+  width: 100%;
+  height: 100vh; /* vh stands for viewport height */
+}
+
+.swiper-slide {
+  width: 100% ;
+  height: 100vh !important; /* Adjust based on your layout needs */
+}
