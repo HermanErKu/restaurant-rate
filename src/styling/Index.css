@@ -53,17 +53,19 @@ body {
 /* CSS */
 .swiper-container {
   width: 100%;
-  height: 100vh; /* vh stands for viewport height */
+  /*height: 100vh;*/
+  overflow-y: auto;
+  height: calc(100vh - 10vh);
 }
 
 .swiper-slide {
   width: 100% ;
-  height: 90vh !important; /* Adjust based on your layout needs */
+  /*height: 90vh !important;*/
 }
 
 
 .overlaysContainer {
-  position: absolute;
+  position: fixed;
   top: -46%;
   left: 0;
   width: 100%;
@@ -91,4 +93,10 @@ body {
   background-color: #171717;
   padding: 10px 0;
   z-index: 10;
+}
+
+
+.pageContent {
+  padding: 10px;
+  padding-top: 50px;
 }

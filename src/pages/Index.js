@@ -54,7 +54,7 @@ const Index = () => {
 
       <Swiper spaceBetween={50} slidesPerView={1} onSlideChange={(swiper) => setActiveSlide(swiper.activeIndex)}>
         <SwiperSlide>
-          <div className="page1Content">
+          <div className="pageContent">
             {data ? ratings.map((rating) => {
               return (
                 <div key={rating["ratingID"]} className="ratingCard">
@@ -71,7 +71,7 @@ const Index = () => {
 
 
         <SwiperSlide>
-          <div className="page2Content">
+          <div className="pageContent">
             {data ? restaurants.map((restaurant) => {
               return (
                 <div key={restaurant["restaurantID"]} className="restaurantCard">
