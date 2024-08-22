@@ -60,3 +60,22 @@ body {
   width: 100% ;
   height: 100vh !important; /* Adjust based on your layout needs */
 }
+
+
+.overlaysContainer {
+  position: absolute;
+  top: -46%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pageOverlayContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+}

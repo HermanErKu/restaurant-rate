@@ -1,3 +1,5 @@
+import React, { useState } from 'react';
+
 import "../styling/Index.css"; // Assuming this is your custom styling
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Modular style imports for Swiper 6+
@@ -8,24 +10,28 @@ import 'swiper/css/pagination';
 
 
 const Index = () => {
-
-  /*return (
-    <div>
-      <h1>Home</h1>
-      <Swiper spaceBetween={50} slidesPerView={1}>
-        <SwiperSlide>Page 1 Content</SwiperSlide>
-        <SwiperSlide>Page 2 Content</SwiperSlide>
-      </Swiper>
-
-      <button className="add-button"></button>
-    </div>
-  );*/
+  const [activeSlide, setActiveSlide] = useState(0);
 
   return (
     <div className="swiper-container">
-      <Swiper spaceBetween={50} slidesPerView={1}>
+      <div className="overlaysContainer">
+        {activeSlide === 0 ?
+          <div className="pageOverlayContainer">
+            <b>Spise ute</b>
+            <p>Takeaway</p>
+          </div>
+          :
+          <div className="pageOverlayContainer">
+            <p>Spise ute</p>
+            <b>Takeaway</b>
+          </div>
+        }
+      </div>
+
+      <Swiper spaceBetween={50} slidesPerView={1} onSlideChange={(swiper) => setActiveSlide(swiper.activeIndex)}>
         <SwiperSlide>
           Page 1 Content
+
         </SwiperSlide>
 
 
