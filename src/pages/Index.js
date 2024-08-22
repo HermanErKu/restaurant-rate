@@ -41,6 +41,10 @@ const Index = () => {
 
         </SwiperSlide>
       </Swiper>
+
+      <div className="bottomNavbar">
+        
+      </div>
     </div>
   )
 }
