@@ -58,7 +58,7 @@ body {
 
 .swiper-slide {
   width: 100% ;
-  height: 100vh !important; /* Adjust based on your layout needs */
+  height: 90vh !important; /* Adjust based on your layout needs */
 }
 
 
