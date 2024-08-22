@@ -19,6 +19,10 @@ const Index = () => {
   const [ratings, setRatings] = useState(null);
   const [restaurants, setRestaurants] = useState(null);
 
+  function sortByRating(ratings) {
+    return ratings.sort((a, b) => b.rating - a.rating);
+  }  
+
   useEffect(() => {
     const fetchData = async () => {
       const dbRef = ref(database, '/');
@@ -55,12 +59,14 @@ const Index = () => {
       <Swiper spaceBetween={50} slidesPerView={1} onSlideChange={(swiper) => setActiveSlide(swiper.activeIndex)}>
         <SwiperSlide>
           <div className="pageContent">
-            {data ? ratings.map((rating) => {
+            {data ? sortByRating(ratings).map((rating) => {
               return (
                 <div key={rating["ratingID"]} className="ratingCard">
-                  <h1>{restaurants[rating["restaurantID"]]["restaurantName"]}</h1>
+                  <h2>{rating["rating"]}/5 - {restaurants[rating["restaurantID"]]["restaurantName"]}</h2>
                   <p>{rating["orderName"]} - {rating["orderPrice"]}kr</p>
                   <p>{rating["comment"]}</p>
+                  <p>{restaurants[rating["restaurantID"]]["restaurantLat"]}, {restaurants[rating["restaurantID"]]["restaurantLong"]}</p>
+                  <p></p>
                 </div>
               )
             }) : null}
