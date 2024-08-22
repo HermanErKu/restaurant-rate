@@ -50,7 +50,7 @@ const Index = () => {
             <b>Restaurants</b>
           </div>
         }
-      </div>
+      </div> 
 
       <Swiper spaceBetween={50} slidesPerView={1} onSlideChange={(swiper) => setActiveSlide(swiper.activeIndex)}>
         <SwiperSlide>
