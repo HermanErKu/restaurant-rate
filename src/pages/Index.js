@@ -9,6 +9,7 @@ import 'swiper/css/pagination';
 import { database } from '../utils/firebase';
 import { ref, onValue, set } from 'firebase/database';
 
+import { Link } from 'react-router-dom';
 
 const Index = () => {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -71,7 +72,7 @@ const Index = () => {
               )
             }) : null}
 
-            <button className="add-button"></button>
+            <Link to="/add"><button className="add-button"></button></Link>
           </div>
         </SwiperSlide>
 

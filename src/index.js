@@ -24,6 +24,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Index from './pages/Index';
+import Add from './pages/Add';
 import MapTest from './pages/MapTest';
 
 export default function App() {
@@ -31,6 +32,9 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route index element={<Index />} />
+
+        <Route path="add" element={<Add />} />
+
 
         <Route path="map" element={<MapTest />} />
       </Routes>
